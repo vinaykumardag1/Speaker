@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 10px solid blueviolet;
+            margin: 5px;
+            background-color: aqua;
+            width: 30cm;
+            height: 40cm;
+
+        }
+        #intro{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-style: oblique;
+            font-stretch: condensed;
+            font-weight: 500;
+            color: brown;
+
+        }
+        #intro2{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            font-style: italic;
+            color: fuchsia;
+
+        }
+        #intro1{
+            font: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: inherit;
+            color: floralwhite;
+        }
+        textarea{
+            font-size: xx-large;
+            font-weight: 400;
+            font-style: italic;
+            color: red;
+            background-color: ghostwhite;
+        }
+        button{
+            width: 2cm;
+            height: 1cm;
+            background: local;
+            background-color: coral;
+            border-radius: 100%;
+            margin: 10px;
+            cursor:pointer;
+        }
+        button:hover{
+            width: 2cm;
+            height: 1cm;
+            background-color: chartreuse;
+            text-decoration: double;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 id="intro">Hi Welcome Our Webpage</h1>
+        <h1 id="intro1">Here Some times we Feel shy to talk with another person<br>
+        This website will Help you to speak </h1>
+        <h1 id="intro2">If Introvert Like me This page is Definitly usefull for You</h1><br><br>
+<center> <textarea></textarea><br>
+    <button>Speak</button>
+</center>
+    </div>
+    <script>
+     button=document.querySelector('button');
+     text=document.querySelector('textarea');
+     button.addEventListener("click",() =>{
+        let utterance=new SpeechSynthesisUtterance(text.value);
+        speechSynthesis.speak(utterance);
+
+     });
+    </script>
+</body>
+</html>
